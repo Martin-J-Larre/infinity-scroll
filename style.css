@@ -43,3 +43,9 @@ h1{
     width: 100%;
     margin-top: 5px;
 }
+
+@media screen and (max-width: 600px){
+    .img-container{
+        margin: 10px;
+    }
+}
