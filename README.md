@@ -1,6 +1,6 @@
-# Quotes Generator
+# Infinity Scroll
 
-This project is a Quote Generator. You can get random quotes from different authors each time you press the button and you can tweet these quotes as well. 
+This project is a. 
 
 ## My process
 
@@ -16,5 +16,5 @@ This project is a Quote Generator. You can get random quotes from different auth
 
 ## Demo
 
-- Website - [https://martin-j-larre.github.io/quote-generator/](https://martin-j-larre.github.io/quote-generator/)
+- Website - []()
 
