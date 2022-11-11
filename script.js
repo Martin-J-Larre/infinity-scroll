@@ -2,25 +2,34 @@ const imageContainer = document.getElementById('img-container');
 const loader = document.getElementById('loader');
 
 let photos = [];
-console.log("desde array", photos);
 
 const count = 10;
 const apiKey = "PITjojqBtyoChVvLJFRARXtgv1Qef_XwbZQUQ3skWt8";
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
+const setAttributes = (element, attributes) => { 
+  for (const key in attributes) {
+    element.setAttribute(key,attributes[key]);
+  }
+}
+
 const renderPhotos = () => { 
   photos.forEach( photo => {
-    const anchor = document.createElement('a');
-    anchor.setAttribute('href', photo.links.html);
-    anchor.setAttribute('target', '_blank');
+    const a_tag = document.createElement('a');
+    setAttributes(a_tag, {
+      href: photo.links.html,
+      target:'_blank'
+    })
 
-    const img = document.createElement('img');
-    img.setAttribute('src', photo.urls.regular); 
-    img.setAttribute('alt', photo.alt_description); 
-    img.setAttribute('title', photo.alt_description); 
+    const img_tag = document.createElement('img');
+    setAttributes(img_tag, {
+      src: photo.urls.regular,
+      alt: photo.alt_description,
+      title: photo.alt_description
+    })
 
-    anchor.appendChild(img);
-    imageContainer.appendChild(anchor);
+    a_tag.appendChild(img_tag);
+    imageContainer.appendChild(a_tag);
 
   });
 }
@@ -36,5 +45,4 @@ const getPhotos = async () => {
   }
 }
 
-console.log("desde array abajo", photos);
 getPhotos();
